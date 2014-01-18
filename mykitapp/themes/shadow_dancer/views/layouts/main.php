@@ -27,9 +27,6 @@
 <body>
 
 <div class="container" id="page">
-	<div id="topnav">
-		<div class="topnav_text"><a href='content'>Content</a> | <a href='#'>My Account</a> | <a href='#'>Settings</a> | <a href='#'>Logout</a> </div>
-	</div>
 	<div id="header">
 		<div id="logo"> Ads Publisher <?php //echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
