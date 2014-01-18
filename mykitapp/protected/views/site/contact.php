@@ -1,8 +1,4 @@
 <?php
-/* @var $this SiteController */
-/* @var $model ContactForm */
-/* @var $form CActiveForm */
-
 $this->pageTitle=Yii::app()->name . ' - Contact Us';
 $this->breadcrumbs=array(
 	'Contact',
@@ -20,7 +16,7 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+If you have business errrr inquiries or other questions, please fill out the following form to contact us. Thank you.
 </p>
 
 <div class="form">
@@ -39,13 +35,13 @@ If you have business inquiries or other questions, please fill out the following
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
@@ -57,7 +53,7 @@ If you have business inquiries or other questions, please fill out the following
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'body',array('rows'=>10, 'cols'=>60)); ?>
 		<?php echo $form->error($model,'body'); ?>
 	</div>
 
@@ -66,6 +62,7 @@ If you have business inquiries or other questions, please fill out the following
 		<?php echo $form->labelEx($model,'verifyCode'); ?>
 		<div>
 		<?php $this->widget('CCaptcha'); ?>
+        <br />
 		<?php echo $form->textField($model,'verifyCode'); ?>
 		</div>
 		<div class="hint">Please enter the letters as they are shown in the image above.
@@ -75,7 +72,7 @@ If you have business inquiries or other questions, please fill out the following
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
+		<?php echo CHtml::submitButton('Submit',array('class'=>'button grey')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

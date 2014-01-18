@@ -15,21 +15,26 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
-		'application.components.*',
+        'application.components.*',
+        'application.extensions.PasswordHash',
+        'application.extensions.EUploadedImage',
+        'application.extensions.S3',
+        'application.vendor.AWS.*',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+	
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'muthu',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+	
 	),
 
+	'theme' => 'shadow_dancer',
 	// application components
 	'components'=>array(
 		'user'=>array(
@@ -37,29 +42,40 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
+				'/' => 'site/index',
+				'login' => 'site/login',
+				'gii' => 'gii',
+                'gii/<controller:\w+>' => 'gii/<controller>',
+                'gii/<controller:\w+>/<action:\w+>' => 'gii/<controller>/<action>',
+
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
-		'db'=>array(
+		
+		'iwi' => array(
+            'class' => 'application.extensions.iwi.IwiComponent',
+            // GD or ImageMagick
+            'driver' => 'GD',
+        ),
+		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+		),*/
 		// uncomment the following to use a MySQL database
-		/*
+		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;dbname=wpplugin',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'fyogi',
 			'charset' => 'utf8',
 		),
-		*/
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -79,6 +95,40 @@ return array(
 				*/
 			),
 		),
+
+		'widgetFactory'=>array(
+            'widgets'=>array(
+                'CGridView'=>array(
+                    'htmlOptions'=>array('cellspacing'=>'0','cellpadding'=>'0'),
+					'itemsCssClass'=>'item-class',
+					'pagerCssClass'=>'pager-class'
+                ),
+                'CJuiTabs'=>array(
+                    'htmlOptions'=>array('class'=>'shadowtabs'),
+                ),
+                'CJuiAccordion'=>array(
+                    'htmlOptions'=>array('class'=>'shadowaccordion'),
+                ),
+                'CJuiProgressBar'=>array(
+                   'htmlOptions'=>array('class'=>'shadowprogressbar'),
+                ),
+                'CJuiSlider'=>array(
+                    'htmlOptions'=>array('class'=>'shadowslider'),
+                ),
+                'CJuiSliderInput'=>array(
+                    'htmlOptions'=>array('class'=>'shadowslider'),
+                ),
+                'CJuiButton'=>array(
+                    'htmlOptions'=>array('class'=>'shadowbutton'),
+                ),
+                'CJuiButton'=>array(
+                    'htmlOptions'=>array('class'=>'shadowbutton'),
+                ),
+                'CJuiButton'=>array(
+                    'htmlOptions'=>array('class'=>'button green'),
+                ),
+            ),
+        ),
 	),
 
 	// application-level parameters that can be accessed

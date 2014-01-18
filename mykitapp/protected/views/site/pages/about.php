@@ -1,12 +1,28 @@
 <?php
-/* @var $this SiteController */
-
-$this->pageTitle=Yii::app()->name . ' - About';
+$this->pageTitle=Yii::app()->name . ' - Calendar';
 $this->breadcrumbs=array(
-	'About',
+	'Calendar',
 );
 ?>
-<h1>About</h1>
+<h1>Calendar</h1>
 
+<?php
+$this->widget('application.extensions.fullcalendar.FullcalendarGraphWidget', 
+    array(
+        'data'=>array(
+                'title'=> 'All Day Event',
+                'start'=> '2012-01-23',
+				'end'=> '2012-01-25',
+        ),
+        'options'=>array(
+            'editable'=>true,
+        ),
+        'htmlOptions'=>array(
+               'class'=>'cal_theme',
+			   'style'=>'width:910px;margin: 0 auto;'
+        ),
+    )
+);
+?>
 <p>This is a "static" page. You may change the content of this page
-by updating the file <code><?php echo __FILE__; ?></code>.</p>
+by updating the file <tt><?php echo __FILE__; ?></tt>.</p>

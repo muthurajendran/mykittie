@@ -27,9 +27,55 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+
+		$logoutUrl = "";
+		$loginUrl = "";
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+/*
+		$this->layout = "kit";
+
+		Yii::import('application.vendor.*');
+		require_once('facebook/src/facebook.php');
+
+		$facebook = new Facebook(array(
+		  'appId'  => '1430479310519409',
+		  'secret' => 'd4e192fdc9b0f1afe027702ca5ef3c73',
+		));
+
+		$user = $facebook->getUser();
+		if ($user) {
+		  try {
+		    // Proceed knowing you have a logged in user who's authenticated.
+		    $user_profile = $facebook->api('/me');
+		    die(var_dump($user_profile));
+
+		  } catch (FacebookApiException $e) {
+		    error_log($e);
+		    $user = null;
+		  }
+		}
+
+		$logoutUrl = "";
+		$loginUrl = "";
+
+		if ($user) {
+		  $logoutUrl = $facebook->getLogoutUrl();
+		}else{
+		  $statusUrl = $facebook->getLoginStatusUrl();
+		  $loginUrl = $facebook->getLoginUrl(array(
+			'scope'		=> 'email,publish_actions', // Permissions to request from the user
+			'redirect_uri'	=> 'http://www.mykit.com/index.php', // URL to redirect the user to once the login/authorization process is complete.
+			));
+		}
+		*/
+
+		//$naitik = $facebook->api('/naitik');
+
+		//die(var_dump($loginUrl));
+
+
+		$this->render('index',array('loginUrl'=>$loginUrl,'logoutUrl'=>$logoutUrl));
 	}
 
 	/**
