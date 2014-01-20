@@ -10,7 +10,7 @@
 			'encodeLabel'=>false,
 			'items'=>array(
 				array('label'=>'<i class="icon icon-home"></i>  Dashboard ', 'url'=>array('/admin/dashboard'),'itemOptions'=>array('class'=>'')),
-				array('label'=>'<i class="icon icon-search"></i> Create Slideshow', 'url'=>array('/sliders/index')),
+				array('label'=>'<i class="icon icon-search"></i> Create Slideshow', 'url'=>array('/admin/createslider')),
 				//array('label'=>'<i class="icon icon-envelope"></i> Messages <span class="badge badge-success pull-right">12</span>', 'url'=>'#'),
 				// Include the operations menu
 				array('label'=>'OPERATIONS','items'=>$this->menu),

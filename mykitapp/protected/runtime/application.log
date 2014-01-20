@@ -859,3 +859,186 @@ Stack trace:
 REQUEST_URI=/index.php/admin/update/1
 HTTP_REFERER=http://www.mykit.com/index.php/admin/dashboard
 ---
+2014/01/20 17:53:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/muthu/Sites/mykit/framework/web/CController.php:336
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('AddSliderConten...')
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/AddSlider...')
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/admin/AddSliderContent/3
+HTTP_REFERER=http://www.mykit.com/index.php/admin/createslider
+---
+2014/01/20 17:53:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/muthu/Sites/mykit/framework/web/CController.php:336
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('AddSliderConten...')
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/AddSlider...')
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/admin/AddSliderContent/3
+---
+2014/01/20 17:53:49 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/muthu/Sites/mykit/framework/web/CController.php:336
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('addsliderconten...')
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/addslider...')
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/admin/addslidercontent/3
+---
+2014/01/20 17:53:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/muthu/Sites/mykit/framework/web/CController.php:336
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('addsliderconten...')
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/addslider...')
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/admin/addslidercontent
+---
+2014/01/20 17:54:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/muthu/Sites/mykit/framework/web/CController.php:336
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('addsliderconten...')
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/addslider...')
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/admin/addslidercontent
+---
+2014/01/20 17:55:35 [error] [php] Undefined variable: id (/Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php:97)
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): AdminController->runAction()
+#3 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): AdminController->filterAccessControl()
+#6 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#8 /Users/muthu/Sites/mykit/framework/web/CController.php(265): AdminController->runActionWithFilters()
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): AdminController->run()
+#10 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/admin/AddSliderContent/4
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (97)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 18:03:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "addslidercontent/view".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('addsliderconten...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/addslidercontent/1
+HTTP_REFERER=http://www.mykit.com/index.php/admin/dashboard
+---
+2014/01/20 18:03:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AddSliderContent/view".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('AddSliderConten...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/AddSliderContent/1
+---
+2014/01/20 18:04:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AddSliderContent/view".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('AddSliderConten...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/AddSliderContent/1
+---
+2014/01/20 18:04:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AddSliderContent/view".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('AddSliderConten...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/AddSliderContent/4
+---
+2014/01/20 18:04:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AddSliderContent/view".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('AddSliderConten...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/AddSliderContent/4
+---
+2014/01/20 18:04:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AddSliderContent/view".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('AddSliderConten...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/AddSliderContent/2
+---
+2014/01/20 18:05:11 [error] [php] include(Slider.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/muthu/Sites/mykit/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(97): spl_autoload_call()
+#1 unknown(0): AdminController->actionAddSliderContent()
+#2 /Users/muthu/Sites/mykit/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#3 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): AdminController->runAction()
+#6 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): AdminController->filterAccessControl()
+#9 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(265): AdminController->runActionWithFilters()
+#12 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): AdminController->run()
+#13 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/admin/AddSliderContent/4
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (97)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 18:05:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "addslidercontent/view".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('addsliderconten...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/addslidercontent/3
+HTTP_REFERER=http://www.mykit.com/index.php/admin/dashboard
+---

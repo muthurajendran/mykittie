@@ -54,7 +54,7 @@ class AdminController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','generatekey','dashboard','UpdateStatus','refundStatus','cancelOrder','logout','refund','payment','invoice','cuisines','updateExperience','NewOrder','OrderRebook'),
+				'actions'=>array('admin','delete','dashboard','CreateSlider','AddSliderContent'),
                 'expression' => 'Yii::app()->user->isAdmin()',
 			),
 			array('deny',  // deny all users
@@ -75,6 +75,33 @@ class AdminController extends Controller
 		$this->render('index',array(
 			'model'=>$model,
 		));
+	}
+
+	public function actionCreateSlider(){
+		$model=new Sliders;
+
+		if(isset($_POST['Sliders']))
+		{
+			$model->attributes=$_POST['Sliders'];
+			if($model->save())
+				$this->redirect(array('addslidercontent','id'=>$model->id));
+		}
+
+		$this->render('slide_create',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionAddSliderContent($id){
+
+		$model=Sliders::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+
+		$this->render('add_content',array(
+			'model'=>$model,
+		));
+
 	}
 
 }

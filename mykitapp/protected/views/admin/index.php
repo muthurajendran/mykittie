@@ -48,8 +48,19 @@ $('.search-form form').submit(function(){
             'filter'=>false,
             'value' => '$data->is_published?"Published":"Draft"'
         ),
-		array(
-			'class'=>'CButtonColumn',
-		),
+        array(
+            'class'=>'CButtonColumn', 
+            'template'=>'{Edit}',
+                    'buttons'=>array
+                    (
+
+                       'Edit' => array
+                        (
+                            'label'=>'Edit Slide',
+                            'url'=>'Yii::app()->createUrl("admin/addslidercontent/".$data->id)',
+
+                        ),
+                    ),
+        ),
 	),
 )); ?>
