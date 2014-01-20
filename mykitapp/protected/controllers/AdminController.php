@@ -112,14 +112,14 @@ class AdminController extends Controller
 				Yii::import('application.vendor.*');
 		        require_once('AWS/sdk.class.php');
 		        $s3 = new AmazonS3();
-		        $bucketname = "tasteryimages";
+		        $bucketname = "slideradfuse";
 
 		        $rand = rand();
 		        if($upload){
 					$name = "images/content-".$rand.".jpg";
 					if($upload->saveAs($name)){
 						$tname = "content-".$rand.".jpg";
-						$response = $s3->create_object($bucketname, "experience/" . $tname , array(
+						$response = $s3->create_object($bucketname, "/" . $tname , array(
 					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->adaptive(500,400)->cache(),11),
 					        'contentType' => $upload->type,
 					        'acl' => $s3::ACL_PUBLIC
