@@ -1042,3 +1042,33 @@ Stack trace:
 REQUEST_URI=/index.php/addslidercontent/3
 HTTP_REFERER=http://www.mykit.com/index.php/admin/dashboard
 ---
+2014/01/20 19:16:58 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (106)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 19:59:21 [error] [php] Undefined variable: slider_id (/Users/muthu/Sites/mykit/mykitapp/protected/views/admin/add_content.php:62)
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(869): AdminController->renderFile()
+#1 /Users/muthu/Sites/mykit/framework/web/CController.php(782): AdminController->renderPartial()
+#2 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(138): AdminController->render()
+#3 unknown(0): AdminController->actionAddSliderContent()
+#4 /Users/muthu/Sites/mykit/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): AdminController->runAction()
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): AdminController->filterAccessControl()
+#11 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#13 /Users/muthu/Sites/mykit/framework/web/CController.php(265): AdminController->runActionWithFilters()
+#14 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): AdminController->run()
+#15 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/admin/addslidercontent/1
+in /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/add_content.php (62)
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (138)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 20:00:55 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (106)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)

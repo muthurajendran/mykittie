@@ -94,12 +94,47 @@ class AdminController extends Controller
 
 	public function actionAddSliderContent($id){
 
-		$model=Sliders::model()->findByPk($id);
-		if($model===null)
+		$slider=Sliders::model()->findByPk($id);
+		if($slider===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 
+
+		$model=new Content;
+
+		if(isset($_POST['Content']))
+		{
+			$model->attributes=$_POST['Content'];
+
+			if($model->validate()){
+				$upload = EUploadedImage::getInstance($model,'image');
+				$model->slider_id = $slider->id;
+
+				Yii::import('application.vendor.*');
+		        require_once('AWS/sdk.class.php');
+		        $s3 = new AmazonS3();
+		        $bucketname = "tasteryimages";
+
+		        $rand = rand();
+		        if($upload){
+					$name = "images/content-".$rand.".jpg";
+					if($upload->saveAs($name)){
+						$tname = "content-".$rand.".jpg";
+						$response = $s3->create_object($bucketname, "experience/" . $tname , array(
+					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->adaptive(500,400)->cache(),11),
+					        'contentType' => $upload->type,
+					        'acl' => $s3::ACL_PUBLIC
+						));
+						if($response)
+					        $model->image = "https://s3.amazonaws.com/".$bucketname."/experience/".$tname;
+					}
+				}
+				if($model->save())
+					$this->redirect(array('admin/addslidercontent','id'=>$slider->id));
+			}
+		}
+
 		$this->render('add_content',array(
-			'model'=>$model,
+			'model'=>$model,'slider'=>$slider,
 		));
 
 	}
