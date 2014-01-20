@@ -15,6 +15,44 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+
+	private $_id;
+	
+    public function authenticate()
+    {
+        //$record=User::model()->findByAttributes(array('username'=>$this->username));
+    	//die(var_dump($this->username));
+
+        $username=strtolower($this->username);
+
+        $record = Users::model()->find('email=:em', array(':em'=>$this->username)); 
+        
+        $ph=new PasswordHash(Yii::app()->params['phpass']['iteration_count_log2'], Yii::app()->params['phpass']['portable_hashes']);
+        
+        //die(var_dump($ph->CheckPassword($this->password, $record->password)));
+
+        if($record===null)
+            $this->errorCode=self::ERROR_USERNAME_INVALID;
+        else if(!$ph->CheckPassword($this->password, $record->password))
+            $this->errorCode=self::ERROR_PASSWORD_INVALID;
+        else
+        {
+        	//die("hi");
+
+            $this->_id=$record->id;
+            $this->setState('username', $record->email);
+       		Yii::app()->session['loggedin'] = true;
+            $this->errorCode=self::ERROR_NONE;
+        }
+        return $this->errorCode;
+    }
+ 
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    /*
 	public function authenticate()
 	{
 		$users=array(
@@ -29,5 +67,5 @@ class UserIdentity extends CUserIdentity
 		else
 			$this->errorCode=self::ERROR_NONE;
 		return !$this->errorCode;
-	}
+	} */
 }

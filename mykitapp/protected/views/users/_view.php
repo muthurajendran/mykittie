@@ -29,8 +29,8 @@
 	<?php echo CHtml::encode($data->forgot_password_key); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('forgot_passwor_time')); ?>:</b>
-	<?php echo CHtml::encode($data->forgot_passwor_time); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('forgot_password_time')); ?>:</b>
+	<?php echo CHtml::encode($data->forgot_password_time); ?>
 	<br />
 
 	<?php /*

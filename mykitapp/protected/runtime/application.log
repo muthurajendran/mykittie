@@ -301,3 +301,561 @@ HTTP_REFERER=http://www.mykit.com/
 2014/01/15 15:44:20 [warning] [application] Failed to set unsafe attribute "image" of "Content".
 in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (73)
 in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 14:00:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'created_at' at row 1. The SQL statement executed was: INSERT INTO `categories` (`name`, `created_at`) VALUES (:yp0, :yp1).
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/CategoriesController.php (73)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 14:00:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'created_at' at row 1. The SQL statement executed was: INSERT INTO `categories` (`name`, `created_at`) VALUES (:yp0, :yp1)' in /Users/muthu/Sites/mykit/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/CategoriesController.php(73): CActiveRecord->save()
+#3 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): CategoriesController->actionCreate()
+#4 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('categories/crea...')
+#14 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/categories/create
+HTTP_REFERER=http://www.mykit.com/index.php/categories/create
+---
+2014/01/20 14:02:37 [warning] [application] Failed to set unsafe attribute "created_at" of "Categories".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/CategoriesController.php (72)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 14:02:52 [warning] [application] Failed to set unsafe attribute "created_at" of "Categories".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/CategoriesController.php (72)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 14:03:01 [warning] [application] Failed to set unsafe attribute "created_at" of "Categories".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/CategoriesController.php (72)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 14:03:08 [warning] [application] Failed to set unsafe attribute "created_at" of "Categories".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/CategoriesController.php (72)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 14:04:04 [warning] [application] Failed to set unsafe attribute "created_at" of "Categories".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/CategoriesController.php (72)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 15:52:47 [error] [exception.CException] exception 'CException' with message 'Property "Users.level" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('level')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('level')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1802): CHtml::resolveValue(Object(Users), 'level')
+#3 /Users/muthu/Sites/mykit/framework/web/widgets/CActiveForm.php(847): CHtml::activeDropDownList(Object(Users), 'level', Array, Array)
+#4 /Users/muthu/Sites/mykit/mykitapp/protected/views/users/_form.php(44): CActiveForm->dropDownList(Object(Users), 'level', Array)
+#5 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#6 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#8 /Users/muthu/Sites/mykit/mykitapp/protected/views/users/create.php(18): CController->renderPartial('_form', Array)
+#9 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#10 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#12 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#13 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/UsersController.php(74): CController->render('create', Array)
+#14 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): UsersController->actionCreate()
+#15 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#22 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('create')
+#24 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('users/create')
+#25 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#26 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/index.php/users/create
+---
+2014/01/20 15:57:02 [error] [exception.CException] exception 'CException' with message 'Property "Users.is_valid" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('is_valid')
+#1 /Users/muthu/Sites/mykit/mykitapp/protected/components/UserIdentity.php(35): CActiveRecord->__get('is_valid')
+#2 /Users/muthu/Sites/mykit/mykitapp/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#3 /Users/muthu/Sites/mykit/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /Users/muthu/Sites/mykit/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /Users/muthu/Sites/mykit/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SiteController.php(133): CModel->validate()
+#7 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /Users/muthu/Sites/mykit/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php/login
+HTTP_REFERER=http://www.mykit.com/index.php/login
+---
+2014/01/20 16:05:23 [warning] [application] Failed to set unsafe attribute "username" of "LoginForm".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SiteController.php (131)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:05:23 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CComponent->__get('username')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /Users/muthu/Sites/mykit/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /Users/muthu/Sites/mykit/mykitapp/themes/abound/views/site/login.php(41): CActiveForm->textField(Object(LoginForm), 'username')
+#5 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#6 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#8 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#9 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SiteController.php(142): CController->render('login', Array)
+#10 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /Users/muthu/Sites/mykit/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php/login
+HTTP_REFERER=http://www.mykit.com/index.php/login
+---
+2014/01/20 16:06:09 [warning] [application] Failed to set unsafe attribute "username" of "LoginForm".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SiteController.php (131)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:06:09 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CComponent->__get('username')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /Users/muthu/Sites/mykit/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /Users/muthu/Sites/mykit/mykitapp/themes/abound/views/site/login.php(41): CActiveForm->textField(Object(LoginForm), 'username')
+#5 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#6 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#8 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#9 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SiteController.php(142): CController->render('login', Array)
+#10 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /Users/muthu/Sites/mykit/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php/login
+HTTP_REFERER=http://www.mykit.com/index.php/login
+---
+2014/01/20 16:06:34 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CComponent->__get('username')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /Users/muthu/Sites/mykit/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /Users/muthu/Sites/mykit/mykitapp/themes/abound/views/site/login.php(41): CActiveForm->textField(Object(LoginForm), 'username')
+#5 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#6 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#8 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#9 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SiteController.php(142): CController->render('login', Array)
+#10 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /Users/muthu/Sites/mykit/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php/login
+---
+2014/01/20 16:07:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/dashboard".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/dashboard')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/dashboard
+HTTP_REFERER=http://www.mykit.com/index.php/login
+---
+2014/01/20 16:11:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in /Users/muthu/Sites/mykit/framework/web/CController.php:483
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(270): CController->missingAction('dashboard')
+#1 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('dashboard')
+#2 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/dashboard')
+#3 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/dashboard
+HTTP_REFERER=http://www.mykit.com/index.php/login
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/css/jquery.css".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/c...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/css/jquery.css
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/js/jquery.gvChart-1.0.1.min.js".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/j...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/js/jquery.gvChart-1.0.1.min.js
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/js/pbs.init.js".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/j...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/js/pbs.init.js
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-inbox.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-inbox.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-shopping-cart2.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-shopping-cart2.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-cash2.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-cash2.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-chart.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-chart.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-people.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-people.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-barcode.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-barcode.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-address-book.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-address-book.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-calendar.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-calendar.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-recycle-bin.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-recycle-bin.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-warning.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-warning.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-people.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-people.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-inbox.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-inbox.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-shopping-cart2.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-shopping-cart2.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-chart.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-chart.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-barcode.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-barcode.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-cash2.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-cash2.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-address-book.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-address-book.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-recycle-bin.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-recycle-bin.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-calendar.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-calendar.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/images/big_icons/icon-warning.png".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/i...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/images/big_icons/icon-warning.png
+HTTP_REFERER=http://www.mykit.com/index.php/site/index
+---
+2014/01/20 16:17:56 [error] [exception.CException] exception 'CException' with message 'AdminController cannot find the requested view "_search".' in /Users/muthu/Sites/mykit/framework/web/CController.php:878
+Stack trace:
+#0 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/index.php(40): CController->renderPartial('_search', Array)
+#1 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#2 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#4 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#5 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(77): CController->render('index', Array)
+#6 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): AdminController->actionDashboard()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#14 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('dashboard')
+#16 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/dashboard')
+#17 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php/admin/dashboard
+---
+2014/01/20 16:20:30 [error] [exception.CException] exception 'CException' with message 'Property "Sliders.categories" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('categories')
+#1 /Users/muthu/Sites/mykit/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('categories')
+#2 /Users/muthu/Sites/mykit/framework/base/CComponent.php(612): eval()
+#3 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CDataColumn.php(137): CComponent->evaluateExpression('$data->categori...', Array)
+#4 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(Sliders))
+#5 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(616): CGridColumn->renderDataCell(0)
+#6 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow(0)
+#7 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#8 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#11 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#12 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(173): CBaseListView->run()
+#13 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/index.php(51): CBaseController->widget('zii.widgets.gri...', Array)
+#14 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#15 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#16 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#17 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#18 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(77): CController->render('index', Array)
+#19 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): AdminController->actionDashboard()
+#20 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#27 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('dashboard')
+#29 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/dashboard')
+#30 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#31 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/index.php/admin/dashboard
+---
+2014/01/20 16:21:48 [warning] [application] Failed to set unsafe attribute "category" of "Sliders".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (73)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:23:57 [warning] [application] Failed to set unsafe attribute "category" of "Sliders".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (73)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:24:44 [warning] [application] Failed to set unsafe attribute "category" of "Sliders".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (73)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:25:22 [warning] [application] Failed to set unsafe attribute "category" of "Sliders".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (73)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:26:05 [error] [php] Trying to get property of non-object (/Users/muthu/Sites/mykit/framework/base/CComponent.php(612) : eval()'d code:1)
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridColumn.php(151): CDataColumn->renderDataCellContent()
+#1 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(616): CDataColumn->renderDataCell()
+#2 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow()
+#3 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#4 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback()
+#7 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(135): CGridView->renderContent()
+#8 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(173): CGridView->run()
+#9 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/index.php(51): AdminController->widget()
+#10 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require()
+#11 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): AdminController->renderInternal()
+#12 /Users/muthu/Sites/mykit/framework/web/CController.php(869): AdminController->renderFile()
+#13 /Users/muthu/Sites/mykit/framework/web/CController.php(782): AdminController->renderPartial()
+#14 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(77): AdminController->render()
+#15 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): AdminController->actionDashboard()
+#16 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): AdminController->runAction()
+#18 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): AdminController->filterAccessControl()
+#21 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#23 /Users/muthu/Sites/mykit/framework/web/CController.php(265): AdminController->runActionWithFilters()
+#24 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): AdminController->run()
+#25 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/admin/dashboard
+in /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/index.php (51)
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (77)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:27:20 [warning] [application] Failed to set unsafe attribute "category_search" of "Sliders".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (73)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:27:57 [warning] [application] Failed to set unsafe attribute "category_search" of "Sliders".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (73)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/20 16:30:50 [error] [exception.CException] exception 'CException' with message 'Property "Sliders.chef" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('chef')
+#1 /Users/muthu/Sites/mykit/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('chef')
+#2 /Users/muthu/Sites/mykit/framework/base/CComponent.php(612): eval()
+#3 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CDataColumn.php(137): CComponent->evaluateExpression('$data->chef->na...', Array)
+#4 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(Sliders))
+#5 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(616): CGridColumn->renderDataCell(0)
+#6 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow(0)
+#7 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#8 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#11 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#12 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(173): CBaseListView->run()
+#13 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/index.php(57): CBaseController->widget('zii.widgets.gri...', Array)
+#14 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#15 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#16 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#17 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#18 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(77): CController->render('index', Array)
+#19 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): AdminController->actionDashboard()
+#20 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#27 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('dashboard')
+#29 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/dashboard')
+#30 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#31 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/index.php/admin/dashboard
+---
+2014/01/20 16:31:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /Users/muthu/Sites/mykit/framework/web/CController.php:483
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(270): CController->missingAction('update')
+#1 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/update')
+#3 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/admin/update/1
+HTTP_REFERER=http://www.mykit.com/index.php/admin/dashboard
+---

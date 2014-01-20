@@ -60,6 +60,8 @@
     
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
+				array('label'=>'Sliders', 'url'=>array('/sliders/admin')),
+				array('label'=>'Categories', 'url'=>array('/categories/admin')),
 				array('label'=>'Content', 'url'=>array('/content/index')),
 				array('label'=>'Video Ads', 'url'=>array('/videoAds/index')),
 				/*

@@ -7,11 +7,16 @@
  */
 class LoginForm extends CFormModel
 {
-	public $username;
+	public $email;
 	public $password;
 	public $rememberMe;
+	public $usertype;
 
 	private $_identity;
+	
+	public function __construct($arg='normal') { // default it is set to Front     
+        $this->usertype = $arg;
+    }
 
 	/**
 	 * Declares the validation rules.
@@ -22,7 +27,7 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('username, password', 'required'),
+			array('email, password', 'required'),
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
@@ -48,9 +53,14 @@ class LoginForm extends CFormModel
 	{
 		if(!$this->hasErrors())
 		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+			$this->_identity=new UserIdentity($this->email,$this->password);
+			if($this->_identity->authenticate() == 1)
+            	$this->addError('email','Invalid! Account Doesn\'t Exist');
+        	else if($this->_identity->authenticate() == 2)
+            	$this->addError('password','Incorrect password.');
+            else if($this->_identity->authenticate() == 3)
+            	$this->addError('password','Account not verified '.CHtml::link('Resend Verify email', array('site/getverifyemail'),array('live' => true, 'class' => 'resend', 'id' => rand(0, 99999))));
+			
 		}
 	}
 
@@ -62,7 +72,7 @@ class LoginForm extends CFormModel
 	{
 		if($this->_identity===null)
 		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
+			$this->_identity=new UserIdentity($this->email,$this->password);
 			$this->_identity->authenticate();
 		}
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)

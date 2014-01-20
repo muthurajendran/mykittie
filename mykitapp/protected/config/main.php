@@ -34,13 +34,14 @@ return array(
 	
 	),
 
-	'theme' => 'shadow_dancer',
+	'theme' => 'abound',
 	// application components
 	'components'=>array(
 		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
-		),
+            'class'=>'application.components.EWebUser',
+            // enable cookie-based authentication
+            'allowAutoLogin'=>true,
+        ),
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
@@ -70,13 +71,11 @@ return array(
 		
 		'db'=>array(
             'connectionString' => 'mysql:host=mydbtastery.cruad6p5de5i.us-east-1.rds.amazonaws.com;dbname=wpplugin',
-
             'emulatePrepare' => true,
             'username' => 'tastery',
             'password' => 'tastery123',
             'charset' => 'utf8',
         ),
-		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -100,9 +99,8 @@ return array(
 		'widgetFactory'=>array(
             'widgets'=>array(
                 'CGridView'=>array(
-                    'htmlOptions'=>array('cellspacing'=>'0','cellpadding'=>'0'),
-					'itemsCssClass'=>'item-class',
-					'pagerCssClass'=>'pager-class'
+					'itemsCssClass'=>'table table-striped table-bordered table-hover',
+					//'pagerCssClass'=>'pager-class'
                 ),
                 'CJuiTabs'=>array(
                     'htmlOptions'=>array('class'=>'shadowtabs'),

@@ -32,40 +32,19 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'password_confirmation'); ?>
+		<?php echo $form->passwordField($model,'password_confirmation',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'password_confirmation'); ?>
+	</div>
+
+	<?php $level = array(0=>"Publiser",1=>"Admin") ?>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'role'); ?>
-		<?php echo $form->textField($model,'role',array('size'=>9,'maxlength'=>9)); ?>
+		<?php echo $form->dropDownList($model,'role',$level); ?>
 		<?php echo $form->error($model,'role'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'api_key'); ?>
-		<?php echo $form->textField($model,'api_key',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'api_key'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'forgot_password_key'); ?>
-		<?php echo $form->textField($model,'forgot_password_key',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'forgot_password_key'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'forgot_passwor_time'); ?>
-		<?php echo $form->textField($model,'forgot_passwor_time'); ?>
-		<?php echo $form->error($model,'forgot_passwor_time'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'created_at'); ?>
-		<?php echo $form->textField($model,'created_at'); ?>
-		<?php echo $form->error($model,'created_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'updated_at'); ?>
-		<?php echo $form->textField($model,'updated_at'); ?>
-		<?php echo $form->error($model,'updated_at'); ?>
-	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

@@ -27,7 +27,7 @@ $this->menu=array(
 		'role',
 		'api_key',
 		'forgot_password_key',
-		'forgot_passwor_time',
+		'forgot_password_time',
 		'created_at',
 		'updated_at',
 	),

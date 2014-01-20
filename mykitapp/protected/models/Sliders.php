@@ -1,30 +1,31 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "sliders".
  *
- * The followings are the available columns in table 'users':
+ * The followings are the available columns in table 'sliders':
  * @property integer $id
- * @property string $email
- * @property string $password
- * @property string $role
- * @property string $api_key
- * @property string $forgot_password_key
- * @property string $forgot_password_time
+ * @property string $name
+ * @property integer $category_id
+ * @property string $description
+ * @property integer $is_published
  * @property string $created_at
- * @property string $updated_at
+ *
+ * The followings are the available model relations:
+ * @property Categories $category
  */
-class Users extends CActiveRecord
+
+class Sliders extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'sliders';
 	}
 
-	public $password_confirmation;
+	public $category_search;
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -34,17 +35,17 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, password, password_confirmation', 'required'),
-			array('email', 'length', 'max'=>128),
-			array('password', 'length', 'max'=>512),
-			array('role', 'length', 'max'=>9),
-			array('api_key, forgot_password_key', 'length', 'max'=>256),
-			array('created_at, updated_at', 'safe'),
+			array('name', 'required'),
+			array('category_id, is_published', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>512),
+			array('description', 'length', 'max'=>4096),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, email, password, role, api_key, forgot_password_key, forgot_password_time, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, name, category_id, description, is_published, category_search', 'safe', 'on'=>'search'),
 		);
 	}
+
+
 
 	/**
 	 * @return array relational rules.
@@ -54,6 +55,7 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'category' => array(self::BELONGS_TO, 'Categories', 'category_id'),
 		);
 	}
 
@@ -64,14 +66,11 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'email' => 'Email',
-			'password' => 'Password',
-			'role' => 'Role',
-			'api_key' => 'Api Key',
-			'forgot_password_key' => 'Forgot Password Key',
-			'forgot_password_time' => 'Forgot Password Time',
+			'name' => 'Name',
+			'category_id' => 'Category',
+			'description' => 'Description',
+			'is_published' => 'Is Published',
 			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
 		);
 	}
 
@@ -93,15 +92,19 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->with = array('category');
+
+		//die(var_dump($this->category_search));
+
+
 		$criteria->compare('id',$this->id);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('role',$this->role,true);
-		$criteria->compare('api_key',$this->api_key,true);
-		$criteria->compare('forgot_password_key',$this->forgot_password_key,true);
-		$criteria->compare('forgot_password_time',$this->forgot_password_time,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('category_id',$this->category_id);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('is_published',$this->is_published);
+		$criteria->compare( 'category.name', $this->category_search, true );
+
 		$criteria->compare('created_at',$this->created_at,true);
-		$criteria->compare('updated_at',$this->updated_at,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -112,7 +115,7 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return Sliders the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
