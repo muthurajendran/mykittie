@@ -86,7 +86,7 @@ class ContentController extends Controller
 					        'acl' => $s3::ACL_PUBLIC
 						));
 						if($response)
-					        $model->image = "https://s3.amazonaws.com/".$bucketname."/experience/".$tname;
+					        $model->image = "https://s3.amazonaws.com/".$bucketname."/".$tname;
 					}
 				}
 				if($model->save())
