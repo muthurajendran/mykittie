@@ -1072,3 +1072,214 @@ in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
 2014/01/20 20:00:55 [warning] [application] Failed to set unsafe attribute "image" of "Content".
 in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (106)
 in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 10:25:12 [error] [exception.CException] exception 'CException' with message 'Property "Content.Image" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('Image')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('Image')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Content), 'Image')
+#3 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Content), 'Image', Array)
+#4 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CDataColumn.php(103): CHtml::activeTextField(Object(Content), 'Image', Array)
+#5 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridColumn.php(116): CDataColumn->renderFilterCellContent()
+#6 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(532): CGridColumn->renderFilterCell()
+#7 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(510): CGridView->renderFilter()
+#8 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(480): CGridView->renderTableHeader()
+#9 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#13 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(173): CBaseListView->run()
+#14 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/add_content.php(49): CBaseController->widget('zii.widgets.gri...', Array)
+#15 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#16 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#17 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#18 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('add_content', Array, true)
+#19 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(138): CController->render('add_content', Array)
+#20 [internal function]: AdminController->actionAddSliderContent('1')
+#21 /Users/muthu/Sites/mykit/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdminController), Array)
+#22 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdminController), Object(ReflectionMethod), Array)
+#23 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#30 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('addsliderconten...')
+#32 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/addslider...')
+#33 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#34 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#35 {main}
+REQUEST_URI=/index.php/admin/addslidercontent/1
+---
+2014/01/21 10:26:56 [error] [exception.CException] exception 'CException' with message 'Property "Content.Image" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('Image')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('Image')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Content), 'Image')
+#3 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Content), 'Image', Array)
+#4 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CDataColumn.php(103): CHtml::activeTextField(Object(Content), 'Image', Array)
+#5 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridColumn.php(116): CDataColumn->renderFilterCellContent()
+#6 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(532): CGridColumn->renderFilterCell()
+#7 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(510): CGridView->renderFilter()
+#8 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(480): CGridView->renderTableHeader()
+#9 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#13 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(173): CBaseListView->run()
+#14 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/add_content.php(49): CBaseController->widget('zii.widgets.gri...', Array)
+#15 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#16 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#17 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#18 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('add_content', Array, true)
+#19 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(138): CController->render('add_content', Array)
+#20 [internal function]: AdminController->actionAddSliderContent('1')
+#21 /Users/muthu/Sites/mykit/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdminController), Array)
+#22 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdminController), Object(ReflectionMethod), Array)
+#23 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#30 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('addsliderconten...')
+#32 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/addslider...')
+#33 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#34 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#35 {main}
+REQUEST_URI=/index.php/admin/addslidercontent/1
+---
+2014/01/21 10:27:54 [error] [exception.CException] exception 'CException' with message 'Property "Content.Image" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('Image')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('Image')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Content), 'Image')
+#3 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Content), 'Image', Array)
+#4 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CDataColumn.php(103): CHtml::activeTextField(Object(Content), 'Image', Array)
+#5 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridColumn.php(116): CDataColumn->renderFilterCellContent()
+#6 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(532): CGridColumn->renderFilterCell()
+#7 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(510): CGridView->renderFilter()
+#8 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(480): CGridView->renderTableHeader()
+#9 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#13 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(173): CBaseListView->run()
+#14 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/add_content.php(49): CBaseController->widget('zii.widgets.gri...', Array)
+#15 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#16 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#17 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#18 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('add_content', Array, true)
+#19 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(138): CController->render('add_content', Array)
+#20 [internal function]: AdminController->actionAddSliderContent('1')
+#21 /Users/muthu/Sites/mykit/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdminController), Array)
+#22 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdminController), Object(ReflectionMethod), Array)
+#23 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#30 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('addsliderconten...')
+#32 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/addslider...')
+#33 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#34 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#35 {main}
+REQUEST_URI=/index.php/admin/addslidercontent/1
+---
+2014/01/21 10:30:31 [error] [exception.CException] exception 'CException' with message 'Property "Content.Image" is not defined.' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(145): CComponent->__get('Image')
+#1 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('Image')
+#2 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Content), 'Image')
+#3 /Users/muthu/Sites/mykit/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Content), 'Image', Array)
+#4 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CDataColumn.php(103): CHtml::activeTextField(Object(Content), 'Image', Array)
+#5 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridColumn.php(116): CDataColumn->renderFilterCellContent()
+#6 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(532): CGridColumn->renderFilterCell()
+#7 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(510): CGridView->renderFilter()
+#8 /Users/muthu/Sites/mykit/framework/zii/widgets/grid/CGridView.php(480): CGridView->renderTableHeader()
+#9 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Users/muthu/Sites/mykit/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#13 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(173): CBaseListView->run()
+#14 /Users/muthu/Sites/mykit/mykitapp/protected/views/admin/add_content.php(49): CBaseController->widget('zii.widgets.gri...', Array)
+#15 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(126): require('/Users/muthu/Si...')
+#16 /Users/muthu/Sites/mykit/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/muthu/Si...', Array, true)
+#17 /Users/muthu/Sites/mykit/framework/web/CController.php(869): CBaseController->renderFile('/Users/muthu/Si...', Array, true)
+#18 /Users/muthu/Sites/mykit/framework/web/CController.php(782): CController->renderPartial('add_content', Array, true)
+#19 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(138): CController->render('add_content', Array)
+#20 [internal function]: AdminController->actionAddSliderContent('1')
+#21 /Users/muthu/Sites/mykit/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdminController), Array)
+#22 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdminController), Object(ReflectionMethod), Array)
+#23 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#30 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('addsliderconten...')
+#32 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/addslider...')
+#33 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#34 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#35 {main}
+REQUEST_URI=/index.php/admin/addslidercontent/1
+---
+2014/01/21 11:04:54 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (106)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 11:30:44 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 11:33:24 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 11:34:25 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 11:39:29 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 11:40:33 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 13:05:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/assets/custom/bxslider/jquery.bxslider.js".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/a...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/assets/custom/bxslider/jquery.bxslider.js
+HTTP_REFERER=http://www.mykit.com/
+---
+2014/01/21 13:05:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/assets/custom/bxslider/jquery.bxslider.js".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/a...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/assets/custom/bxslider/jquery.bxslider.js
+HTTP_REFERER=http://www.mykit.com/
+---
+2014/01/21 13:05:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/abound/assets/custom/bxslider/jquery.bxslider.js".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/abound/a...')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/abound/assets/custom/bxslider/jquery.bxslider.js
+HTTP_REFERER=http://www.mykit.com/themes/abound/assets/custom/bxslider/jquery.bxslider.js
+---
+2014/01/21 13:23:47 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (106)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/21 13:39:39 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (106)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)

@@ -80,13 +80,13 @@ class ContentController extends Controller
 					$name = "images/content-".$rand.".jpg";
 					if($upload->saveAs($name)){
 						$tname = "content-".$rand.".jpg";
-						$response = $s3->create_object($bucketname, "/" . $tname , array(
-					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->adaptive(500,400)->cache(),11),
+						$response = $s3->create_object($bucketname, "images/" . $tname , array(
+					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->cache(),11),
 					        'contentType' => $upload->type,
 					        'acl' => $s3::ACL_PUBLIC
 						));
 						if($response)
-					        $model->image = "https://s3.amazonaws.com/".$bucketname."/".$tname;
+					        $model->image = "https://s3.amazonaws.com/".$bucketname."/images/".$tname;
 					}
 				}
 				if($model->save())
@@ -114,8 +114,37 @@ class ContentController extends Controller
 		if(isset($_POST['Content']))
 		{
 			$model->attributes=$_POST['Content'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->validate()){
+				$upload = EUploadedImage::getInstance($model,'image');
+
+				// die(var_dump($upload));
+
+				Yii::import('application.vendor.*');
+		        require_once('AWS/sdk.class.php');
+		        $s3 = new AmazonS3();
+		        $bucketname = "slideradfuse";
+
+		        $rand = rand();
+		        if($upload){
+					$name = "images/content-".$rand.".jpg";
+					if($upload->saveAs($name)){
+						$tname = "content-".$rand.".jpg";
+						$response = $s3->create_object($bucketname, "images/" . $tname , array(
+					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->cache(),11),
+					        'contentType' => $upload->type,
+					        'acl' => $s3::ACL_PUBLIC
+						));
+
+						//die(var_dump($response));
+
+						if($response)
+					        $model->image = "https://s3.amazonaws.com/".$bucketname."/images/".$tname;
+					}
+				}
+
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(

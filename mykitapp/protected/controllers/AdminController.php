@@ -119,13 +119,13 @@ class AdminController extends Controller
 					$name = "images/content-".$rand.".jpg";
 					if($upload->saveAs($name)){
 						$tname = "content-".$rand.".jpg";
-						$response = $s3->create_object($bucketname, "/" . $tname , array(
-					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->adaptive(500,400)->cache(),11),
+						$response = $s3->create_object($bucketname, "images/" . $tname , array(
+					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->cache(),11),
 					        'contentType' => $upload->type,
 					        'acl' => $s3::ACL_PUBLIC
 						));
 						if($response)
-					        $model->image = "https://s3.amazonaws.com/".$bucketname."/".$tname;
+					        $model->image = "https://s3.amazonaws.com/".$bucketname."/images/".$tname;
 					}
 				}
 				if($model->save())

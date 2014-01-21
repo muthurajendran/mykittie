@@ -1,4 +1,3 @@
-<h3>Under contstruction</h3>
 <pre>
 <div class="controls-row">
     <?php
@@ -6,13 +5,72 @@
 	echo(CHtml::label("Category:".$slider->category->name,'.span2',array('class'=>'span2')));
 	echo(CHtml::label("Description:".$slider->description,'.span4',array('class'=>'span7')));
 	?>
-    <br />
-
     <?php 
-    echo "Slideshow will come here"
+
+    $content = $model->search_by_slider($slider->id);
+    $data = $content->getData();
+
     ?>
 </div>
 </pre>
+
+<?php if($data) { ?>
+
+ <ul class="bxslider">	
+	    <?php foreach ($data as $row) { ?>
+	    	 <li  style="margin:0px" ><img src="<?php echo $row->image ?>"  title="<?php echo $row->caption ?>"/></li>
+	    	
+	    <?php } ?>
+		</ul>
+<?php } ?>
+
+<h4>Slides</h4>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'content-grid',
+	'dataProvider'=>$content,
+	'filter'=>$model,
+	'columns'=>array(
+		'id',
+		'title',
+		array('name'=>'image',
+            'type'=>'html',
+            'header'=>'Picture',
+            'filter'=>false,
+            'value'=> 'CHtml::image($data->image, "image", array("width"=>100))'
+        ),
+		'caption',
+		//'created_at',
+		//'updated_at',
+		array(
+            'class'=>'CButtonColumn', 
+            'template'=>'{update}',
+                    'buttons'=>array
+                    (
+
+                       'update' => array
+                        (
+                            'label'=>'Edit Slide',
+                            'url'=>'Yii::app()->createUrl("content/update/".$data->id)',
+
+                        ),
+                    ),
+        ),
+        array(
+            'class'=>'CButtonColumn', 
+            'template'=>'{delete}',
+                    'buttons'=>array
+                    (
+
+                       'delete' => array
+                        (
+                            'label'=>'Delete Slide',
+                            'url'=>'Yii::app()->createUrl("content/delete/".$data->id)',
+
+                        ),
+                    ),
+        ),
+	),
+)); ?>
 
 <div class="form">
 
@@ -58,22 +116,18 @@
 
 </div><!-- form -->
 
+<script type="text/javascript">
+	$(document).ready(function(){
+	  $('.bxslider').bxSlider({
+	  	auto: false,
+  //autoControls: false,
+  //controls:false,
+  adaptiveHeight: true,
+  mode: 'fade',
+  captions: true,
+  });
+	});
+</script>
 
-<h4>Slides</h4>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'content-grid',
-	'dataProvider'=>$model->search_by_slider($slider->id),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'title',
-		'image',
-		'caption',
-		'created_at',
-		'updated_at',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+
