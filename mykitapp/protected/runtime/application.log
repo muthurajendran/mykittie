@@ -1466,3 +1466,9 @@ REQUEST_URI=/admin/createfeed
 in /Users/muthu/Sites/mykit/mykitapp/protected/extensions/feed/EFeedItemRSS2.php (98)
 in /Users/muthu/Sites/mykit/mykitapp/protected/extensions/feed/EFeedItemRSS2.php (57)
 in /Users/muthu/Sites/mykit/mykitapp/protected/extensions/feed/EFeed.php (408)
+2014/01/23 18:23:57 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/23 18:24:07 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (65)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)

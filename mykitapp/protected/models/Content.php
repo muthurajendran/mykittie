@@ -34,7 +34,7 @@ class Content extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title','required'),
-			array('image', 'file', 'types'=>'jpg, gif, png, jpeg','allowEmpty'=>false),
+			array('image', 'file', 'types'=>'jpg, gif, png, jpeg','allowEmpty'=>false,'on'=>'create'),
 			array('title', 'length', 'max'=>128),
 			//array('image', 'length', 'max'=>1024),
 			array('caption', 'length', 'max'=>4096),

@@ -54,7 +54,7 @@ class ContentController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Content;
+		$model=new Content('create');
 		//$model->image = EUploadedImage::getInstance($model,'image');
 
 		// Uncomment the following line if AJAX validation is needed
