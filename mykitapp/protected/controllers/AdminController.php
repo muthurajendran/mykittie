@@ -89,6 +89,7 @@ class AdminController extends Controller
 		$feed->addChannelTag('atom:link',Yii::app()->getBaseUrl('true').'/admin/createfeed');
 		 
 		$content = Content::model()->findAll();
+		$ads = VideoAds::model()->findAll();
 
 		foreach ($content as $row) {
 
@@ -96,7 +97,7 @@ class AdminController extends Controller
 		 
 			$item->title = $row->title;
 			$item->link = Yii::app()->getBaseUrl('true').'/admin/createfeed';
-			$item->date = time();
+			//$item->date = time();
 			$item->description = $row->caption;
 			//$item->image = $row->image;
 			//$item->addTag('image',$row->image);
@@ -109,6 +110,26 @@ class AdminController extends Controller
 			 
 			$feed->addItem($item);
 			
+		}
+
+		foreach ($ads as $row) {
+			$item = $feed->createNewItem();
+		 
+			$item->title = $row->title;
+			$item->link = Yii::app()->getBaseUrl('true').'/admin/createfeed';
+			//$item->date = time();
+			$item->description = $row->description;
+			//$item->image = $row->image;
+			//$item->addTag('image',$row->image);
+			//	'title'=>'W3Schools.com', 'link'=>'http://www.w3schools.com'));
+			// this is just a test!!
+			$item->setEncloser($row->content, '128090', 'video/mpeg');
+			 
+			//$item->addTag('author', 'thisisnot@myemail.com (Antonio Ramirez)');
+			//$item->addTag('guid', 'http://www.ramirezcobos.com/',array('isPermaLink'=>'true'));
+			 
+			$feed->addItem($item);
+			# code...
 		}
 /*
 		$item = $feed->createNewItem();
