@@ -98,6 +98,9 @@ class AdminController extends Controller
 			$item->link = Yii::app()->getBaseUrl('true').'/admin/createfeed';
 			$item->date = time();
 			$item->description = $row->caption;
+			//$item->image = $row->image;
+			$item->addTag('image',$row->image);
+			//	'title'=>'W3Schools.com', 'link'=>'http://www.w3schools.com'));
 			// this is just a test!!
 			//$item->setEncloser('http://www.tester.com', '1283629', 'audio/mpeg');
 			 
