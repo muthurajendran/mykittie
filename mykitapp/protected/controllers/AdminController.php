@@ -96,7 +96,7 @@ class AdminController extends Controller
 			$item = $feed->createNewItem();
 		 
 			$item->title = $row->title;
-			$item->link = Yii::app()->getBaseUrl('true').'/admin/createfeed';
+			//$item->link = Yii::app()->getBaseUrl('true').'/admin/createfeed';
 			//$item->date = time();
 			$item->description = $row->caption;
 			//$item->image = $row->image;
