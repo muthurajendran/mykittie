@@ -54,7 +54,7 @@ class AdminController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','dashboard','CreateSlider','AddSliderContent'),
+				'actions'=>array('admin','delete','dashboard','CreateSlider','AddSliderContent','CreateFeed'),
                 'expression' => 'Yii::app()->user->isAdmin()',
 			),
 			array('deny',  // deny all users
@@ -63,7 +63,68 @@ class AdminController extends Controller
 		);
 	}
 
+
 	public $layout='//layouts/column2';
+
+
+	public function actionCreateFeed(){
+		//print_r(Yii::app()->getBaseUrl('true'));
+		//exit;
+
+		Yii::import('ext.feed.*');
+		// RSS 2.0 is the default type
+		$feed = new EFeed();
+		 
+		$feed->title= 'News';
+		$feed->description = 'Test feed for site';
+		 
+		$feed->setImage('Testing RSS 2.0 EFeed class',Yii::app()->getBaseUrl('true').'/admin/createfeed',
+		'http://www.yiiframework.com/forum/uploads/profile/photo-7106.jpg');
+		 
+		$feed->addChannelTag('language', 'en-us');
+		$feed->addChannelTag('pubDate', date(DATE_RSS, time()));
+		$feed->addChannelTag('link', Yii::app()->getBaseUrl('true').'/admin/createfeed');
+		 
+		// * self reference
+		$feed->addChannelTag('atom:link',Yii::app()->getBaseUrl('true').'/admin/createfeed');
+		 
+		$content = Content::model()->findAll();
+
+		foreach ($content as $row) {
+
+			$item = $feed->createNewItem();
+		 
+			$item->title = $row->title;
+			$item->link = Yii::app()->getBaseUrl('true').'/admin/createfeed';
+			$item->date = time();
+			$item->description = $row->caption;
+			// this is just a test!!
+			//$item->setEncloser('http://www.tester.com', '1283629', 'audio/mpeg');
+			 
+			$item->addTag('author', 'thisisnot@myemail.com (Antonio Ramirez)');
+			$item->addTag('guid', 'http://www.ramirezcobos.com/',array('isPermaLink'=>'true'));
+			 
+			$feed->addItem($item);
+			
+		}
+/*
+		$item = $feed->createNewItem();
+		 
+		$item->title = "first Feed";
+		$item->link = "http://www.yahoo.com";
+		$item->date = time();
+		$item->description = 'This is test of adding CDATA Encoded description <b>EFeed Extension</b>';
+		// this is just a test!!
+		//$item->setEncloser('http://www.tester.com', '1283629', 'audio/mpeg');
+		 
+		$item->addTag('author', 'thisisnot@myemail.com (Antonio Ramirez)');
+		$item->addTag('guid', 'http://www.ramirezcobos.com/',array('isPermaLink'=>'true'));
+		 
+		$feed->addItem($item);
+		 */
+		$feed->generateFeed();
+		Yii::app()->end();
+	}
 
 	public function actionDashboard()
 	{

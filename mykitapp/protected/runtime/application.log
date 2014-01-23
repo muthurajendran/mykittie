@@ -1283,3 +1283,62 @@ in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
 2014/01/21 13:39:39 [warning] [application] Failed to set unsafe attribute "image" of "Content".
 in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (106)
 in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/23 12:34:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "createfeed".' in /Users/muthu/Sites/mykit/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('createfeed')
+#1 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/createfeed
+---
+2014/01/23 12:39:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "createfeed.rss".' in /Users/muthu/Sites/mykit/framework/web/CController.php:483
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(270): CController->missingAction('createfeed.rss')
+#1 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('createfeed.rss')
+#2 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/createfee...')
+#3 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/createfeed.rss
+---
+2014/01/23 12:49:38 [error] [exception.CException] exception 'CException' with message 'AdminController and its behaviors do not have a method or closure named "getBaseUrl".' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(73): CComponent->__call('getBaseUrl', Array)
+#1 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(73): AdminController->getBaseUrl()
+#2 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): AdminController->actionCreateFeed()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('createfeed')
+#12 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/createfee...')
+#13 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/createfeed
+---
+2014/01/23 12:57:14 [error] [exception.CException] exception 'CException' with message 'Content and its behaviors do not have a method or closure named "finadAll".' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(227): CComponent->__call('finadAll', Array)
+#1 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(93): CActiveRecord->__call('finadAll', Array)
+#2 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php(93): Content->finadAll()
+#3 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): AdminController->actionCreateFeed()
+#4 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('createfeed')
+#13 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/createfee...')
+#14 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/createfeed
+---
