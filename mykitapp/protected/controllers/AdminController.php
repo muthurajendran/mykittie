@@ -99,10 +99,10 @@ class AdminController extends Controller
 			$item->date = time();
 			$item->description = $row->caption;
 			//$item->image = $row->image;
-			$item->addTag('image',$row->image);
+			//$item->addTag('image',$row->image);
 			//	'title'=>'W3Schools.com', 'link'=>'http://www.w3schools.com'));
 			// this is just a test!!
-			//$item->setEncloser('http://www.tester.com', '1283629', 'audio/mpeg');
+			$item->setEncloser($row->image, '1280', 'image/jpeg');
 			 
 			$item->addTag('author', 'thisisnot@myemail.com (Antonio Ramirez)');
 			$item->addTag('guid', 'http://www.ramirezcobos.com/',array('isPermaLink'=>'true'));
