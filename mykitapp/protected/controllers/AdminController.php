@@ -112,7 +112,7 @@ class AdminController extends Controller
 	    $xml .= '<language>' . "en-us" . '</language>' . "\n";
 
       	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";;
-      	$xml .= '<atom:link rel="self" href="http://www.mykit.com/admin/createfeed" type="application/rss+xml"></atom:link>'. "\n";
+      	$xml .= '<atom:link rel="self" href="'. Yii::app()->getBaseUrl('true') .'/admin/createfeed" type="application/rss+xml"></atom:link>'. "\n";
 	   	//$xml .= '</atom:link>'. "\n";
 	 
 	    // get RSS channel items
