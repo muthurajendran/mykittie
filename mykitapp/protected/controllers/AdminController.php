@@ -91,6 +91,82 @@ class AdminController extends Controller
 		$content = Content::model()->findAll();
 		$ads = VideoAds::model()->findAll();
 
+
+		$xml = '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
+	    $xml .= '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:atom="http://www.w3.org/2005/Atom">' . "\n";
+	    // channel required properties
+	    $xml .= '<channel>' . "\n";
+	    $xml .= '<title>' . 'News' . '</title>' . "\n";
+	    $xml .= '<link>' . Yii::app()->getBaseUrl('true').'/admin/createfeed' . '</link>' . "\n";
+	    $xml .= '<description>' . 'Test feed for site' . '</description>' . "\n";
+	 
+	   
+	   
+	    $xml .= '<image>' . "\n";
+      	$xml .= '<title>' . 'News' . '</title>' . "\n";
+      	$xml .= '<link>' . Yii::app()->getBaseUrl('true').'/admin/createfeed' . '</link>' . "\n";
+      	$xml .= '<url>' . 'http://www.yiiframework.com/forum/uploads/profile/photo-7106.jpg' . '</url>' . "\n";
+      	$xml .= '</image>' . "\n";
+
+      	 // channel optional properties
+	    $xml .= '<language>' . "en-us" . '</language>' . "\n";
+
+      	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";;
+      	$xml .= '<atom:link rel="self" href="http://www.mykit.com/admin/createfeed" type="application/rss+xml"></atom:link>'. "\n";
+	   	//$xml .= '</atom:link>'. "\n";
+	 
+	    // get RSS channel items
+	    $now =  date("YmdHis"); // get current time  // configure appropriately to your environment
+	    //$rss_items = $this->get_feed_items($now);
+	    $i=0;
+	    foreach ($content as $row) {
+	   		$xml .= '<item>' . "\n";
+	     	$xml .= '<title>' . $row->title . '</title>' . "\n";
+	      	//$xml .= '<link>' .  . '</link>' . "\n";
+	      	//$xml .= '<description>' . $row->description. '</description>' . "\n";
+	    	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";;
+	    	//$xml .= '<category>' . $rss_item['category'] . '</category>' . "\n";
+	    	//$xml .= '<source>' . $rss_item['source'] . '</source>' . "\n";
+	 		$xml .= '<enclosure url="'.$row->image.'" length="1280" type="image/jpeg">'. "\n";;
+	      	/*if($this->full_feed) {
+	        	$xml .= '<content:encoded>' . $rss_item['content'] . '</content:encoded>' . "\n";
+	      	}*/
+	      	$xml .= '</enclosure>'."\n";
+
+	      	$xml .= '<guid>'.Yii::app()->getBaseUrl('true').'/'.$i.'</guid>'."\n";
+	      	$xml .= '</item>' . "\n";
+	      	$i++;
+	    }
+	 /*
+	    foreach($rss_items as $rss_item) {
+	    	$xml .= '<item>' . "\n";
+	    	$xml .= '<title>' . $rss_item['title'] . '</title>' . "\n";
+	    	$xml .= '<link>' . $rss_item['link'] . '</link>' . "\n";
+	    	$xml .= '<description>' . $rss_item['description'] . '</description>' . "\n";
+	    	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>';
+	    	//$xml .= '<category>' . $rss_item['category'] . '</category>' . "\n";
+	    	//$xml .= '<source>' . $rss_item['source'] . '</source>' . "\n";
+	 		$xml = '<enclosure url="'.$row->image.'" length="1280" type="image/jpeg"></enclosure>';
+	      	if($this->full_feed) {
+	        	$xml .= '<content:encoded>' . $rss_item['content'] . '</content:encoded>' . "\n";
+	      	}
+	      	$xml .= '</item>' . "\n";
+	    } */
+	 
+	    $xml .= '</channel>';
+	 
+	    $xml .= '</rss>';
+
+	    echo $xml;
+
+	    //var_dump($xml);
+	   // die();
+
+	    Yii::app()->end();
+	 
+	    /*return $xml; 
+
+		
 		foreach ($content as $row) {
 
 			$item = $feed->createNewItem();
@@ -131,23 +207,11 @@ class AdminController extends Controller
 			$feed->addItem($item);
 			# code...
 		}
-/*
-		$item = $feed->createNewItem();
-		 
-		$item->title = "first Feed";
-		$item->link = "http://www.yahoo.com";
-		$item->date = time();
-		$item->description = 'This is test of adding CDATA Encoded description <b>EFeed Extension</b>';
-		// this is just a test!!
-		//$item->setEncloser('http://www.tester.com', '1283629', 'audio/mpeg');
-		 
-		$item->addTag('author', 'thisisnot@myemail.com (Antonio Ramirez)');
-		$item->addTag('guid', 'http://www.ramirezcobos.com/',array('isPermaLink'=>'true'));
-		 
-		$feed->addItem($item);
-		 */
+
 		$feed->generateFeed();
-		Yii::app()->end();
+		Yii::app()->end(); */
+
+	
 	}
 
 	public function actionDashboard()
