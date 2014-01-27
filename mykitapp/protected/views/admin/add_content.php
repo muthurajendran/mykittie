@@ -16,12 +16,11 @@
 
 <?php if($data) { ?>
 
- <ul class="bxslider">	
-	    <?php foreach ($data as $row) { ?>
-	    	 <li  style="margin:0px" ><img src="<?php echo $row->image ?>"  title="<?php echo $row->caption ?>"/></li>
-	    	
-	    <?php } ?>
-		</ul>
+<ul class="bxslider">	
+    <?php foreach ($data as $row) { ?>
+    	 <li  style="margin:0px" ><img src="<?php echo $row->image ?>"  title="<?php echo $row->caption ?>"/></li>
+    <?php } ?>
+</ul>
 <?php } ?>
 
 <h4>Slides</h4>
@@ -30,7 +29,7 @@
 	'dataProvider'=>$content,
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//'id',
 		'title',
 		array('name'=>'image',
             'type'=>'html',

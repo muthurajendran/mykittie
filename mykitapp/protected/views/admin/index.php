@@ -7,10 +7,6 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Sliders', 'url'=>array('index')),
-	array('label'=>'Create Sliders', 'url'=>array('create')),
-);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -34,7 +30,7 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//'id',
 		'name',
 		array(
             'header' => 'Category',
@@ -47,6 +43,21 @@ $('.search-form form').submit(function(){
             'name' => 'is_published',
             'filter'=>false,
             'value' => '$data->is_published?"Published":"Draft"'
+        ),
+
+        array(
+            'class'=>'CButtonColumn', 
+            'template'=>'{Embed}',
+                    'buttons'=>array
+                    (
+
+                       'Embed' => array
+                        (
+                            'label'=>'Embed code',
+                            'url'=>'Yii::app()->createUrl("admin/embed/".$data->id)',
+
+                        ),
+                    ),
         ),
         array(
             'class'=>'CButtonColumn', 

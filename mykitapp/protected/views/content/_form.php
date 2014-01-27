@@ -36,7 +36,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'caption'); ?>
-		<?php echo $form->textField($model,'caption',array('size'=>60,'maxlength'=>4096)); ?>
+		<?php echo $form->textArea($model,'caption',array('size'=>60,'maxlength'=>4096)); ?>
 		<?php echo $form->error($model,'caption'); ?>
 	</div>
 
