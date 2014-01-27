@@ -11,7 +11,7 @@ class Iwi extends Image
      * @param bool $upscale
      * @return Iwi|object
      */
-    public function adaptive($width, $height, $upscale = false)
+    public function adaptive($width, $height, $upscale = false, $crop= true)
     {
 
         if ($this->image) {
@@ -38,9 +38,12 @@ class Iwi extends Image
                 $newWidth = round($newHeight / $this->image["height"] * $this->image["width"]);
             }
 
-            $this->resize($newWidth, $newHeight);
-
-            return $this->crop($width, $height, "center");
+            if($crop){
+                $this->resize($newWidth, $newHeight);
+                return $this->crop($width, $height, "center");
+            } else {
+                $this->resize($newWidth, $newHeight);
+            }
 
         }
         return $this;

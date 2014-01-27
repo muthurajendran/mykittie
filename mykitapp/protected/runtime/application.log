@@ -1595,3 +1595,9 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/01/27 10:08:28 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/01/27 10:10:21 [warning] [application] Failed to set unsafe attribute "image" of "Content".
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/ContentController.php (116)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)

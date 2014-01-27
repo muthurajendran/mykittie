@@ -81,7 +81,7 @@ class ContentController extends Controller
 					if($upload->saveAs($name)){
 						$tname = "content-".$rand.".jpg";
 						$response = $s3->create_object($bucketname, "images/" . $tname , array(
-					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->cache(),11),
+					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->adaptive(540,300,Image::AUTO,false)->cache(),11),
 					        'contentType' => $upload->type,
 					        'acl' => $s3::ACL_PUBLIC
 						));
@@ -130,7 +130,7 @@ class ContentController extends Controller
 					if($upload->saveAs($name)){
 						$tname = "content-".$rand.".jpg";
 						$response = $s3->create_object($bucketname, "images/" . $tname , array(
-					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->cache(),11),
+					    	'fileUpload' => substr(Yii::app()->iwi->load($name)->adaptive(540,300,Image::AUTO,false)->cache(),11),
 					        'contentType' => $upload->type,
 					        'acl' => $s3::ACL_PUBLIC
 						));
