@@ -127,7 +127,7 @@ class AdminController extends Controller
 	    	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";;
 	    	//$xml .= '<category>' . $rss_item['category'] . '</category>' . "\n";
 	    	//$xml .= '<source>' . $rss_item['source'] . '</source>' . "\n";
-	 		$xml .= '<enclosure url="'.$row->image.'" length="1280" type="image/jpeg">'. "\n";;
+	 		$xml .= '<enclosure url="'.str_replace('https', 'http', $row->image).'" length="1280" type="image/jpeg">'. "\n";;
 	      	/*if($this->full_feed) {
 	        	$xml .= '<content:encoded>' . $rss_item['content'] . '</content:encoded>' . "\n";
 	      	}*/
@@ -158,7 +158,7 @@ class AdminController extends Controller
 	    $xml .= '</rss>';
 
 	    header('Content-Type: application/rss+xml; charset=utf-8');
-	    
+
 	    echo $xml;
 
 	    //var_dump($xml);
