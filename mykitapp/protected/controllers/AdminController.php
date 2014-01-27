@@ -131,7 +131,7 @@ class AdminController extends Controller
 	      	/*if($this->full_feed) {
 	        	$xml .= '<content:encoded>' . $rss_item['content'] . '</content:encoded>' . "\n";
 	      	}*/
-	      	$xml .= '</enclosure>'."\n";
+	      	//$xml .= '</enclosure>'."\n";
 
 	      	$xml .= '<guid>'.Yii::app()->getBaseUrl('true').'/'.$i.'</guid>'."\n";
 	      	$xml .= '</item>' . "\n";
