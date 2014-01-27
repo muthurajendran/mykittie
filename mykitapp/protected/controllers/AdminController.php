@@ -157,6 +157,8 @@ class AdminController extends Controller
 	 
 	    $xml .= '</rss>';
 
+	    header('Content-Type: application/rss+xml; charset=utf-8');
+	    
 	    echo $xml;
 
 	    //var_dump($xml);
