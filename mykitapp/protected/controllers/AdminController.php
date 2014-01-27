@@ -123,7 +123,7 @@ class AdminController extends Controller
 	   		$xml .= '<item>' . "\n";
 	     	$xml .= '<title>' . $row->title . '</title>' . "\n";
 	      	//$xml .= '<link>' .  . '</link>' . "\n";
-	      	//$xml .= '<description>' . $row->description. '</description>' . "\n";
+	      	$xml .= '<description>' . $row->caption. '</description>' . "\n";
 	    	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";;
 	    	//$xml .= '<category>' . $rss_item['category'] . '</category>' . "\n";
 	    	//$xml .= '<source>' . $rss_item['source'] . '</source>' . "\n";
