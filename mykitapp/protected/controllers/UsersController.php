@@ -51,7 +51,7 @@ class UsersController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Users;
+		$model=new Users('create');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -86,12 +86,51 @@ class UsersController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		$pre_email = $model->email;
+		$pre_pass = $model->password;
+
+		if(isset($_POST['Users']))
+		{
+			//die(var_dump($_POST['Users']));
+			$model->attributes=$_POST['Users'];
+			//Set it to true
+			$av = false;
+			if($pre_email != $model->email)  //If email is changed check for availability
+				$av = Users::model()->find('email=:email',array(':email'=>$model->email));
+
+			if(!$av){
+				if($model->validate()){
+					if(!$_POST['Users']['password']){
+						//if no password than store the previous password
+						$model->password = $pre_pass;
+						$model->password_confirmation = $pre_pass;
+					} else { 
+						$ph=new PasswordHash(Yii::app()->params['phpass']['iteration_count_log2'], Yii::app()->params['phpass']['portable_hashes']);
+		      			$password_hash=$ph->HashPassword($model->password);
+
+		      			$model->password = $password_hash;
+		      			$model->password_confirmation = $password_hash;
+		      		}
+	      			//die(var_dump($model->attributes));
+	      			if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
+	      		}
+	      	} else {
+	      		Yii::app()->user->setFlash('error',"Sorry! There is already an user exists with this email");
+	      	}
+		}
+
+		$model->password = "";
+
+		/*
+
 		if(isset($_POST['Users']))
 		{
 			$model->attributes=$_POST['Users'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		*/
 
 		$this->render('update',array(
 			'model'=>$model,
