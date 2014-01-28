@@ -98,6 +98,7 @@ class ApiController extends Controller
 			die();
 		}
 	}
+	
 
 	public function actionGetFeed($id="",$api=""){
 		$this->checkApiValid($id,$api);
