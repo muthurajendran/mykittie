@@ -55,6 +55,7 @@ class ApiController extends Controller
 
 	}
 
+
 	public function checkApiValid($id,$api){
 		$user = "";
 		$data = array();
@@ -103,9 +104,26 @@ class ApiController extends Controller
 
 		if($id && $api){
 			//return a particular data
-			var_dump($id);
-			var_dump($api);
-			die();
+			$slider=Sliders::model()->findByPk($id);
+			if($slider===null){
+				$data['status'] = 0;
+				$data['msg']['error'] = "No slider found";
+				echo json_encode($data);
+				die();
+			}
+			$model = new Content();
+			$content = $model->search_by_slider($slider->id);
+    		$data = $content->getData();
+    		$res = array();
+    		foreach ($data as $row) {
+				$temp = array();
+				$temp['id'] = $row->id; 
+				$temp['url'] = $row->image;
+				$temp['caption'] = $row->caption;
+				$res[] = $temp;
+				# code...
+			}
+    		die(json_encode($res));
 		} else{
 			// Give all published sliders
 			$sliders = Sliders::model()->findAll('is_published=:pub',array(':pub'=>1));
