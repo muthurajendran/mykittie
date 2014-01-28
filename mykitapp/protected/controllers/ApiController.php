@@ -34,6 +34,27 @@ class ApiController extends Controller
 	}
 	*/
 
+	public function actionViewSlide($id="",$api=""){
+		$this->checkApiValid($id,$api);
+		if(!$id){
+			$data['status'] = 0;
+			$data['msg']['error'] = "No slide key";
+			echo json_encode($data);
+			die();
+		}
+
+		$slider=Sliders::model()->findByPk($id);
+		if($slider===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		$model = new Content();
+		$content = $model->search_by_slider($slider->id);
+    	$data = $content->getData();
+
+    	die(var_dump($data));
+
+
+	}
+
 	public function checkApiValid($id,$api){
 		$user = "";
 		$data = array();
@@ -91,6 +112,7 @@ class ApiController extends Controller
 			//die(var_dump($sliders));
 			foreach ($sliders as $row) {
 				$temp = array();
+				$temp['id'] = $row->id; 
 				$temp['name'] = $row->name;
 				$temp['description'] = $row->description;
 				$temp['category'] = $row->category->name;
