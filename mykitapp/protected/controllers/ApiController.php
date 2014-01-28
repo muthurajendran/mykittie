@@ -47,10 +47,10 @@ class ApiController extends Controller
 		if($slider===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		$model = new Content();
-		$content = $model->search_by_slider($slider->id);
-    	$data = $content->getData();
 
-    	die(var_dump($data));
+		$this->render('index',array(
+			'model'=>$model,'slider'=>$slider
+		));
 
 
 	}
