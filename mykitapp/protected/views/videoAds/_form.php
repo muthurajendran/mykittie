@@ -31,6 +31,13 @@
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
+	<?php $pub = array('WEB','MOBILE'); ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'type'); ?>
+		<?php echo $form->dropDownList($model,'type',array_combine($pub,$pub)); ?>
+		<?php echo $form->error($model,'type'); ?>
+	</div>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'content'); ?>
 		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>

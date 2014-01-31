@@ -27,12 +27,12 @@ class VideoAds extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content', 'required'),
+			array('title, type, content', 'required'),
 			array('title', 'length', 'max'=>128),
 			array('description', 'length', 'max'=>1024),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, description, content', 'safe', 'on'=>'search'),
+			array('id, title, type, description, content', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,6 +57,7 @@ class VideoAds extends CActiveRecord
 			'title' => 'Title',
 			'description' => 'Description',
 			'content' => 'Content',
+			'type'=>'Type'
 		);
 	}
 
@@ -82,6 +83,7 @@ class VideoAds extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('content',$this->content,true);
+		$criteria->compare('type',$this->type,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
