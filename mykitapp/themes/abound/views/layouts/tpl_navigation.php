@@ -17,10 +17,11 @@
 					'itemCssClass'=>'item-test',
                     'encodeLabel'=>false,
                     'items'=>array(
-                        array('label'=>'Sliders', 'url'=>array('/sliders/admin')),
+                      //  array('label'=>'Sliders', 'url'=>array('/sliders/admin')),
                         array('label'=>'Categories', 'url'=>array('/categories/admin')),
-                        array('label'=>'Content', 'url'=>array('/content/admin')),
-                        array('label'=>'Video Ads', 'url'=>array('/videoAds/admin')),
+                        //array('label'=>'Content', 'url'=>array('/content/admin')),
+                        array('label'=>'Ads', 'url'=>array('/videoAds/admin')),
+                        array('label'=>'Settings', 'url'=>array('/settings/admin')),
                         array('label'=>'Users', 'url'=>array('/users/admin')),
 
                         /*

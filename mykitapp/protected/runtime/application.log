@@ -1831,3 +1831,113 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/02/03 18:01:56 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php:85)
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): AdminController->runAction()
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): AdminController->filterAccessControl()
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): AdminController->runActionWithFilters()
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): AdminController->run()
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/createfeed
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (85)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/02/03 18:02:10 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php:85)
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): AdminController->runAction()
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): AdminController->filterAccessControl()
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): AdminController->runActionWithFilters()
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): AdminController->run()
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/createfeed
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (85)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/02/03 18:05:18 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php:121)
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): AdminController->runAction()
+#2 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): AdminController->filterAccessControl()
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(265): AdminController->runActionWithFilters()
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): AdminController->run()
+#9 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/createfeed
+in /Users/muthu/Sites/mykit/mykitapp/protected/controllers/AdminController.php (121)
+in /Users/muthu/Sites/mykit/mykitapp/index.php (13)
+2014/02/04 12:18:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/muthu/Sites/mykit/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('settings/admin')
+#9 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/settings/admin
+HTTP_REFERER=http://www.mykit.com/index.php/admin/dashboard
+---
+2014/02/04 12:25:07 [error] [exception.CException] exception 'CException' with message 'Settings and its behaviors do not have a method or closure named "getData".' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SettingsController.php(135): CActiveRecord->__call('getData', Array)
+#2 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SettingsController.php(135): Settings->getData()
+#3 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): SettingsController->actionAdmin()
+#4 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('admin')
+#13 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('settings/admin')
+#14 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/settings/admin
+---
+2014/02/04 12:25:36 [error] [exception.CException] exception 'CException' with message 'Settings and its behaviors do not have a method or closure named "getdata".' in /Users/muthu/Sites/mykit/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/muthu/Sites/mykit/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getdata', Array)
+#1 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SettingsController.php(135): CActiveRecord->__call('getdata', Array)
+#2 /Users/muthu/Sites/mykit/mykitapp/protected/controllers/SettingsController.php(135): Settings->getdata()
+#3 /Users/muthu/Sites/mykit/framework/web/actions/CInlineAction.php(49): SettingsController->actionAdmin()
+#4 /Users/muthu/Sites/mykit/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/muthu/Sites/mykit/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/muthu/Sites/mykit/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/muthu/Sites/mykit/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/muthu/Sites/mykit/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/muthu/Sites/mykit/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/muthu/Sites/mykit/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(282): CController->run('admin')
+#13 /Users/muthu/Sites/mykit/framework/web/CWebApplication.php(141): CWebApplication->runController('settings/admin')
+#14 /Users/muthu/Sites/mykit/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/muthu/Sites/mykit/mykitapp/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/settings/admin
+---

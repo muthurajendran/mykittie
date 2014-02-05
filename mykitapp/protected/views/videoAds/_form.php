@@ -31,7 +31,7 @@
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
-	<?php $pub = array('WEB','MOBILE'); ?>
+	<?php $pub = array('WEB','MOBILE','GOOGLE'); ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',array_combine($pub,$pub)); ?>

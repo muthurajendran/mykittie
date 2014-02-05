@@ -1,15 +1,15 @@
 <?php
-/* @var $this CategoriesController */
-/* @var $model Categories */
+/* @var $this SettingsController */
+/* @var $model Settings */
 
 $this->breadcrumbs=array(
-	'Categories'=>array('index'),
+	'Settings'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Categories', 'url'=>array('index')),
-	array('label'=>'Create Categories', 'url'=>array('create')),
+	array('label'=>'List Settings', 'url'=>array('index')),
+	array('label'=>'Create Settings', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#categories-grid').yiiGridView('update', {
+	$('#settings-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,17 +26,15 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Categories</h1>
-
+<h1>Manage Settings</h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'categories-grid',
+	'id'=>'settings-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'name',
-		'created_at',
+		'key',
+		'value',
 		array(
 			'class'=>'CButtonColumn',
 		),

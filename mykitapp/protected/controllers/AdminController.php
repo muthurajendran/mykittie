@@ -82,7 +82,7 @@ class AdminController extends Controller
 		'http://www.yiiframework.com/forum/uploads/profile/photo-7106.jpg');
 		 
 		$feed->addChannelTag('language', 'en-us');
-		$feed->addChannelTag('pubDate', date(DATE_RSS, time()));
+		//$feed->addChannelTag('pubDate', date(DATE_RSS, time()));
 		$feed->addChannelTag('link', Yii::app()->getBaseUrl('true').'/admin/createfeed');
 		 
 		// * self reference
@@ -90,6 +90,8 @@ class AdminController extends Controller
 		 
 		$content = Content::model()->findAll();
 		$ads = VideoAds::model()->findAll();
+
+		//die(var_dump($ads));
 
 
 		$xml = '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
@@ -116,7 +118,7 @@ class AdminController extends Controller
 	   	//$xml .= '</atom:link>'. "\n";
 	 
 	    // get RSS channel items
-	    $now =  date("YmdHis"); // get current time  // configure appropriately to your environment
+	    //$now =  date("YmdHis"); // get current time  // configure appropriately to your environment
 	    //$rss_items = $this->get_feed_items($now);
 	    $i=0;
 	    foreach ($content as $row) {
@@ -127,7 +129,7 @@ class AdminController extends Controller
 	    	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";;
 	    	//$xml .= '<category>' . $rss_item['category'] . '</category>' . "\n";
 	    	//$xml .= '<source>' . $rss_item['source'] . '</source>' . "\n";
-	 		$xml .= '<enclosure url="'.str_replace('https', 'http', $row->image).'" length="1280" type="image/jpeg">'. "\n";;
+	 		$xml .= '<enclosure url="'.str_replace('https', 'http', $row->image).'" length="1280" type="image/jpeg">'. "\n";
 	      	/*if($this->full_feed) {
 	        	$xml .= '<content:encoded>' . $rss_item['content'] . '</content:encoded>' . "\n";
 	      	}*/
@@ -137,6 +139,7 @@ class AdminController extends Controller
 	      	$xml .= '</item>' . "\n";
 	      	$i++;
 	    }
+	    
 	 /*
 	    foreach($rss_items as $rss_item) {
 	    	$xml .= '<item>' . "\n";
