@@ -34,6 +34,16 @@ class ApiController extends Controller
 	}
 	*/
 
+	public function actionRegister(){
+		if(isset($_POST['url']) && isset($_POST['email'])){
+			//create api key
+			$msg = "success";
+			die(var_dump(json_encode($msg)));
+		}
+		$msg = "error";
+		die(var_dump(json_encode($msg)));
+	}
+
 	public function actionViewSlide($id="",$api=""){
 		$this->checkApiValid($id,$api);
 		if(!$id){
