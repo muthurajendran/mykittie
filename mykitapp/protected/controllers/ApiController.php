@@ -116,6 +116,8 @@ class ApiController extends Controller
 			$model = new Content();
 			$content = $model->search_by_slider($slider->id);
     		$data = $content->getData();
+    		//die(var_dump($data));
+
     		$res = array();
     		foreach ($data as $row) {
 				$temp = array();
