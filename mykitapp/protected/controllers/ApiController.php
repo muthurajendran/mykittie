@@ -35,13 +35,38 @@ class ApiController extends Controller
 	*/
 
 	public function actionRegister(){
+		$data['status'] = 0;
+		$data['msg'] = "no data";
 		if(isset($_POST['url']) && isset($_POST['email'])){
 			//create api key
-			$msg = "success";
-			die(var_dump(json_encode($msg)));
+			$data = array();
+			$user = Users::model()->find('email = :em and site_url =:site',array(':em'=>$_POST['email'],':site'=>$_POST['url']));
+			if($user){
+				$data['api_key'] = $user->api_key;
+				$data['status'] = 1;
+			} else {
+				$user = new Users;
+				$user->email = $_POST['email'];
+				$user->api_key = mt_rand();
+				$user->role = 0;
+				$user->site_url = $_POST['url'];
+				$ph=new PasswordHash(Yii::app()->params['phpass']['iteration_count_log2'], Yii::app()->params['phpass']['portable_hashes']);
+		      	$password_hash=$ph->HashPassword($user->api_key);
+		      	$user->password = $password_hash;
+		      	$user->password_confirmation = $password_hash;
+				if($user->save())
+				{
+					$data['api_key'] = $user->api_key;
+					$data['status'] = 1;
+				} else{
+					$data['status'] = 0;
+					$data['msg'] = "db error";
+				}
+			}
 		}
-		$msg = "error";
-		die(var_dump(json_encode($msg)));
+		//$content['data'] = $data;
+		echo json_encode($data);
+		die();
 	}
 
 	public function actionViewSlide($id="",$api=""){

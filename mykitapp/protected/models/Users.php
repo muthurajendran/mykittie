@@ -43,7 +43,7 @@ class Users extends CActiveRecord
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, email, password, role, api_key, forgot_password_key, forgot_password_time, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, email, password, role, site_url, api_key, forgot_password_key, forgot_password_time, created_at, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +68,7 @@ class Users extends CActiveRecord
 			'email' => 'Email',
 			'password' => 'Password',
 			'role' => 'Role',
+			'site_url'=>'Site Url',
 			'api_key' => 'Api Key',
 			'forgot_password_key' => 'Forgot Password Key',
 			'forgot_password_time' => 'Forgot Password Time',
@@ -98,6 +99,7 @@ class Users extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('role',$this->role,true);
+		$criteria->compare('site_url',$this->site_url,true);
 		$criteria->compare('api_key',$this->api_key,true);
 		$criteria->compare('forgot_password_key',$this->forgot_password_key,true);
 		$criteria->compare('forgot_password_time',$this->forgot_password_time,true);
