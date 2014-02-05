@@ -69,7 +69,8 @@ return array(
 		),*/
 		// uncomment the following to use a MySQL database
 		
-		'connectionString' => 'mysql:host=mydbtastery.cruad6p5de5i.us-east-1.rds.amazonaws.com;dbname=wpplugin',
+		'db'=>array(
+			'connectionString' => 'mysql:host=mydbtastery.cruad6p5de5i.us-east-1.rds.amazonaws.com;dbname=wpplugin',
 			'emulatePrepare' => true,
 			'username' => 'tastery',
 			'password' => 'tastery123',
