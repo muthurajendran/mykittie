@@ -158,6 +158,7 @@ class ApiController extends Controller
 				$temp = array();
 				$temp['id'] = $row->id; 
 				$temp['url'] = $row->image;
+				$temp['title'] = $row->title;
 				$temp['caption'] = $row->caption;
 				$res[] = $temp;
 				# code...
