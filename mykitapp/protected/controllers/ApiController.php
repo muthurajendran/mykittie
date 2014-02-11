@@ -7,33 +7,7 @@ class ApiController extends Controller
 		$this->render('index');
 	}
 
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
-
+	//Function to autoregister the api's when wordpress plugin is installed returns apikey
 	public function actionRegister(){
 		$data['status'] = 0;
 		$data['msg'] = "no data";
@@ -64,11 +38,11 @@ class ApiController extends Controller
 				}
 			}
 		}
-		//$content['data'] = $data;
 		echo json_encode($data);
 		die();
 	}
 
+	//Action to preview slide when Preview slide is clicked either in Website or the WPplugin
 	public function actionViewSlide($id="",$api=""){
 		$this->checkApiValid($id,$api);
 		if(!$id){
@@ -90,7 +64,7 @@ class ApiController extends Controller
 
 	}
 
-
+	//Function to validate the api's and the id. Helper for functions
 	public function checkApiValid($id,$api){
 		$user = "";
 		$data = array();
@@ -113,6 +87,7 @@ class ApiController extends Controller
 		}
 	}
 
+	//Api to feed the video ads to the publishers
 	public function actionGetVideoAds($id="",$api=""){
 		$this->checkApiValid($id,$api);
 		$content = array();
@@ -135,10 +110,9 @@ class ApiController extends Controller
 		}
 	}
 	
-
+	//Function to serve the feed of an Slideshow or serve all the availaible slideshows.
 	public function actionGetFeed($id="",$api=""){
 		$this->checkApiValid($id,$api);
-
 		if($id && $api){
 			//return a particular data
 			$slider=Sliders::model()->findByPk($id);
@@ -148,39 +122,80 @@ class ApiController extends Controller
 				echo json_encode($data);
 				die();
 			}
-			$model = new Content();
-			$content = $model->search_by_slider($slider->id);
-    		$data = $content->getData();
-    		//die(var_dump($data));
+			$data = Content::model()->search_by_slider($slider->id)->getData();
 
     		$res = array();
     		foreach ($data as $row) {
-				$temp = array();
-				$temp['id'] = $row->id; 
-				$temp['url'] = $row->image;
-				$temp['title'] = $row->title;
-				$temp['caption'] = $row->caption;
-				$res[] = $temp;
-				# code...
+				$res[] = array('id'=>$row->id,'url'=>$row->image,'title'=>$row->title,'caption'=>$row->caption);
 			}
     		die(json_encode($res));
 		} else{
 			// Give all published sliders
 			$sliders = Sliders::model()->findAll('is_published=:pub',array(':pub'=>1));
-			//die(var_dump($sliders));
-			foreach ($sliders as $row) {
-				$temp = array();
-				$temp['id'] = $row->id; 
-				$temp['name'] = $row->name;
-				$temp['description'] = $row->description;
-				$temp['category'] = $row->category->name;
-				$temp['category_id'] = $row->category_id;
-				$content[] = $temp;
-				# code...
+			if($sliders===null){
+				$data['status'] = 0;
+				$data['msg']['error'] = "No Slideshows published";
+				echo json_encode($data);
+				die();
 			}
-			die(json_encode($content));
+			foreach ($sliders as $row) {
+				$content[] = array('id'=>$row->id,'name'=>$row->name,'description'=>$row->description,
+					'category'=>$row->category->name,'category_id'=>$row->category_id);
+			}
+			echo json_encode($content);
+			die();
 		}
 	}
 
+	//Create feed for slidedeck
+	public function actionCreateFeed($id=""){
+		
+		if(!$id){
+			echo json_encode(array('Error'=>'No Slideshow specified'));
+			die();
+		}
 
+		$slider=Sliders::model()->findByPk($id);
+		if($slider===null){
+			echo json_encode(array('Error'=>'No Slideshow found with that id'));
+			die();
+		}
+		$content = Content::model()->search_by_slider($slider->id)->getData();
+		
+		//Custom feed created to clear the eroors in xml
+		$xml = '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
+	    $xml .= '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:atom="http://www.w3.org/2005/Atom">' . "\n";
+	    // channel required properties
+	    $xml .= '<channel>' . "\n";
+	    $xml .= '<title>' . 'News' . '</title>' . "\n";
+	    $xml .= '<link>' . Yii::app()->getBaseUrl('true').'/admin/createfeed' . '</link>' . "\n";
+	    $xml .= '<description>' . 'Test feed for site' . '</description>' . "\n";
+	    $xml .= '<image>' . "\n";
+      	$xml .= '<title>' . 'News' . '</title>' . "\n";
+      	$xml .= '<link>' . Yii::app()->getBaseUrl('true').'/admin/createfeed' . '</link>' . "\n";
+      	$xml .= '<url>' . 'http://www.yiiframework.com/forum/uploads/profile/photo-7106.jpg' . '</url>' . "\n";
+      	$xml .= '</image>' . "\n";
+      	// channel optional properties
+	    $xml .= '<language>' . "en-us" . '</language>' . "\n";
+      	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";;
+      	$xml .= '<atom:link rel="self" href="'. Yii::app()->getBaseUrl('true') .'/admin/createfeed" type="application/rss+xml"></atom:link>'. "\n";
+    	// get RSS channel items
+	    $i=0;
+	    foreach ($content as $row) {
+	   		$xml .= '<item>' . "\n";
+	     	$xml .= '<title>' . $row->title . '</title>' . "\n";
+	      	$xml .= '<description>' . $row->caption. '</description>' . "\n";
+	    	$xml .= '<pubDate>Mon, 27 Jan 2014 08:32:01 +0100</pubDate>'. "\n";
+	 		$xml .= '<enclosure url="'.str_replace('https', 'http', $row->image).'" length="1280" type="image/jpeg">'. "\n";
+	      	$xml .= '</enclosure>'."\n";
+	      	$xml .= '<guid>'.Yii::app()->getBaseUrl('true').'/'.$i.'</guid>'."\n";
+	      	$xml .= '</item>' . "\n";
+	      	$i++;
+	    }
+	    $xml .= '</channel>';	 
+	    $xml .= '</rss>';
+	    header('Content-Type: application/xml; charset=utf-8');
+	    echo $xml;
+	    Yii::app()->end();	
+	}
 }
