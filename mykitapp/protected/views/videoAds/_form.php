@@ -43,6 +43,11 @@
 		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'content'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'vast_tag'); ?>
+		<?php echo $form->textField($model,'vast_tag',array('size'=>60,'maxlength'=>1024)); ?>
+		<?php echo $form->error($model,'vast_tag'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
