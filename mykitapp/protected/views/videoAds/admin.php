@@ -38,6 +38,7 @@ $('.search-form form').submit(function(){
 		'description',
 		'type',
 		'content',
+		'vast_tags',
 		array(
 			'class'=>'CButtonColumn',
 		),
