@@ -48,6 +48,7 @@ class VideoAdsController extends Controller
 				$temp['description'] = $row->description;
 				$temp['content'] = $row->content;
 				$temp['type'] = $row->type;
+				$temp['vast_tag'] = $row->vast_tag;
 				$content[] = $temp;
 				# code...
 			}
@@ -83,6 +84,7 @@ class VideoAdsController extends Controller
 		if(isset($_POST['VideoAds']))
 		{
 			$model->attributes=$_POST['VideoAds'];
+			$model->vast_tag = $_POST['VideoAds']['vast_tag'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -107,6 +109,7 @@ class VideoAdsController extends Controller
 		if(isset($_POST['VideoAds']))
 		{
 			$model->attributes=$_POST['VideoAds'];
+			$model->vast_tag = $_POST['VideoAds']['vast_tag'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
