@@ -8,6 +8,8 @@
  * @property string $title
  * @property string $description
  * @property string $content
+ * @property string $vast_tag
+ 
  */
 class VideoAds extends CActiveRecord
 {
@@ -57,7 +59,8 @@ class VideoAds extends CActiveRecord
 			'title' => 'Title',
 			'description' => 'Description',
 			'content' => 'Content',
-			'type'=>'Type'
+			'type'=>'Type',
+			'vast_tag'=>'Vast Tag'
 		);
 	}
 
