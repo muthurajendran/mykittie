@@ -98,6 +98,7 @@ class ApiController extends Controller
 			$temp['description'] = $row->description;
 			$temp['content'] = $row->content;
 			$temp['type'] = $row->type;
+			$temp['vast_tag'] = $row->vast_tag;
 			$content[] = $temp;
 		}
 		if($content)
